@@ -54,13 +54,13 @@ code {
 <%
 	//若用户未登录访问主页，则页面重定向至登录界面login.jsp
 	if(session.getAttribute("currentUser")==null){
-		response.sendRedirect(request.getContextPath()+"/login.jsp");
+		response.sendRedirect(request.getContextPath()+ "/login.jsp");
 		return;
 	}
 
 	String mainPage=(String)request.getAttribute("mainPage");
 	if(mainPage==null || mainPage.equals("")){
-		mainPage="/common/default.jsp";
+		mainPage= "/common/default.jsp";
 	}
 %>
 <!-- 页头 -->

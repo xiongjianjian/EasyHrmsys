@@ -48,7 +48,7 @@ public class EmployeeController {
 		PageBean pageBean=new PageBean(Integer.parseInt(page),10); //分页：一页10条（此处先写死）
 		List<Employee> employeeList=employeeService.employeeList(pageBean,s_employee);
 		int total=employeeService.employeeCount(s_employee);
-		String pageCode=PageUtil.getPagation(request.getContextPath()+"/employee/list.do", total, Integer.parseInt(page), pageBean.getPageSize());
+		String pageCode=PageUtil.getPagation(request.getContextPath()+ "/employee/list.do", total, Integer.parseInt(page), pageBean.getPageSize());
 		mav.addObject("employeeList", employeeList);
 		mav.addObject("pageCode", pageCode);
 		mav.addObject("modeName", "人事管理");
@@ -61,7 +61,7 @@ public class EmployeeController {
 	public ModelAndView preSave(@RequestParam(value="id",required=false)String id){
 		ModelAndView mav=new ModelAndView();
 		mav.addObject("modeName", "人事管理");
-		mav.addObject("mainPage","/employee/save.jsp");
+		mav.addObject("mainPage", "/employee/save.jsp");
 		mav.setViewName("main");
 		
 		DataDic s_dataDic=new DataDic();
@@ -130,7 +130,7 @@ public class EmployeeController {
 		if(file.getSize()!=0){ //文件上传
 			String filePath=request.getServletContext().getRealPath("/");
 			System.out.println(filePath);
-			file.transferTo(new File(filePath+"userImages/"+file.getOriginalFilename()));
+			file.transferTo(new File(filePath+ "userImages/" +file.getOriginalFilename()));
 			employee.setEmpPicture(file.getOriginalFilename());
 		}
 		

@@ -45,7 +45,7 @@ public class InterviewController {
 		PageBean pageBean=new PageBean(Integer.parseInt(page),5); //分页：一页5条（此处先写死）
 		List<Interview> interviewList=interviewService.interviewList(pageBean,s_interview);
 		int total=interviewService.interviewCount(s_interview);
-		String pageCode=PageUtil.getPagation(request.getContextPath()+"/interview/list.do", total, Integer.parseInt(page), pageBean.getPageSize());
+		String pageCode=PageUtil.getPagation(request.getContextPath()+ "/interview/list.do", total, Integer.parseInt(page), pageBean.getPageSize());
 		mav.addObject("interviewList", interviewList);
 		
 		//添加面试信息时 先把招聘合格者选出来

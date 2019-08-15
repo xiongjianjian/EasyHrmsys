@@ -10,7 +10,7 @@
 						alert(result.errorInfo)
 					}else{
 						alert("删除成功");
-						window.location.href="${pageContext.request.contextPath}/user/list.do";
+						window.location.href="/list.do";
 					}
 				}
 			);
@@ -29,7 +29,7 @@
     </form>
   </div>
   <div class="col-md-6" >
-  	<button type="button" class="btn btn-primary" style="float: right;" onclick="javascript:window.location.href='${pageContext.request.contextPath}/user/preSave.do'">添加</button>
+  	<button type="button" class="btn btn-primary" style="float: right;" onclick="javascript:window.location.href='/preSave.do'">添加</button>
   </div>
 </div>
 <div>
@@ -53,7 +53,7 @@
 	  			<c:if test="${user.role==3 }">人事专员</c:if>
 	  		</td>
 	  		<td>
-	  			<button type="button" class="btn btn-info btn-xs" onclick="javascript:window.location.href='${pageContext.request.contextPath}/user/preSave.do?userId=${user.userId }'">修改</button>
+	  			<button type="button" class="btn btn-info btn-xs" onclick="javascript:window.location.href='/preSave.do?userId=${user.userId }'">修改</button>
 	  			<button type="button" class="btn btn-danger btn-xs" onclick="userDelete(${user.userId })">删除</button>
 	  		</td>
 	  	</tr>

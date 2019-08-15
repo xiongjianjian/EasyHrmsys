@@ -11,7 +11,7 @@
 						alert(result.errorInfo)
 					}else{
 						alert("删除成功");
-						window.location.href="${pageContext.request.contextPath}/dataDic/list.do";
+						window.location.href="/list.do";
 					}
 				}
 			);
@@ -30,7 +30,7 @@
     </form>
   </div>
   <div class="col-md-6" >
-  	<button type="button" class="btn btn-primary" style="float: right;" onclick="javascript:window.location.href='${pageContext.request.contextPath}/dataDic/preSave.do'">添加</button>
+  	<button type="button" class="btn btn-primary" style="float: right;" onclick="javascript:window.location.href='/preSave.do'">添加</button>
   </div>
 </div>
 <div>
@@ -49,7 +49,7 @@
 	  		<td>${dataDic.ddDesc }</td>
 	  		<td>${dataDic.ddTypeName }</td>
 	  		<td>
-	  			<button type="button" class="btn btn-info btn-xs" onclick="javascript:window.location.href='${pageContext.request.contextPath}/dataDic/preSave.do?ddId=${dataDic.ddId }'">修改</button>
+	  			<button type="button" class="btn btn-info btn-xs" onclick="javascript:window.location.href='/preSave.do?ddId=${dataDic.ddId }'">修改</button>
 	  			<button type="button" class="btn btn-danger btn-xs" onclick="userDelete(${dataDic.ddId })">删除</button>
 	  		</td>
 	  	</tr>

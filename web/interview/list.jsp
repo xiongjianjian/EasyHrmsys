@@ -19,7 +19,7 @@
 			$.post("${pageContext.request.contextPath}/interview/begin.do",{recruitId:selectOne,userId:chooseInterviewer},function(result){
 				var result=eval('('+result+')');
 				if(result.success=="true"){
-					window.location.href="${pageContext.request.contextPath}/interview/list.do";
+					window.location.href="/list.do";
 				}
 	        });			
 		});
@@ -32,7 +32,7 @@
 				function(result){
 					var result=eval('('+result+')');
 					if(result.success=="true"){
-						window.location.href="${pageContext.request.contextPath}/interview/list.do";
+						window.location.href="/list.do";
 					}
 				}
 			);
@@ -47,7 +47,7 @@
 				function(result){
 					var result=eval('('+result+')');
 					if(result.success=="true"){
-						window.location.href="${pageContext.request.contextPath}/interview/list.do";
+						window.location.href="/list.do";
 					}
 				}
 			);

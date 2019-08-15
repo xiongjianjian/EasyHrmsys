@@ -43,11 +43,11 @@ public class DataDicController {
 		PageBean pageBean=new PageBean(Integer.parseInt(page),10); //分页：一页10条（此处先写死）
 		List<DataDic> dataDicList=dataDicService.dataDicList(pageBean,s_dataDic);
 		int total=dataDicService.dataDicCount(s_dataDic);
-		String pageCode= PageUtil.getPagation(req.getContextPath()+"/dataDic/list.do", total, Integer.parseInt(page), pageBean.getPageSize());
+		String pageCode= PageUtil.getPagation(req.getContextPath()+ "/dataDic/list.do", total, Integer.parseInt(page), pageBean.getPageSize());
 		mav.addObject("dataDicList", dataDicList);
 		mav.addObject("pageCode", pageCode);
 		mav.addObject("modeName", "系统数据管理");
-		mav.addObject("mainPage","/dataDic/list.jsp");
+		mav.addObject("mainPage", "/dataDic/list.jsp");
 		mav.setViewName("main");
 		return mav;
 	}
@@ -55,7 +55,7 @@ public class DataDicController {
 	public ModelAndView preSave(@RequestParam(value="ddId",required=false)String ddId){
 		ModelAndView mav=new ModelAndView();
 		mav.addObject("modeName", "系统数据管理");
-		mav.addObject("mainPage","/dataDic/save.jsp");
+		mav.addObject("mainPage", "/dataDic/save.jsp");
 
 		mav.setViewName("main");
 		

@@ -79,7 +79,7 @@ body {
 			</div>
 		</div>
 		<div class="col-md-4">
-		  <form class="form-signin" action="${pageContext.request.contextPath}/user/login.do"  method="post" onsubmit="return checkForm()">
+		  <form class="form-signin" action="${pageContext.request.contextPath}/user/login.do" method="post" onsubmit="return checkForm()">
 		    <label for="inputEmail" class="sr-only">用户名：</label>
 		    <input type="text" id="userName" name="userName" class="form-control" placeholder="请输入用户名">
 		    <label for="inputPassword" class="sr-only">密码：</label>

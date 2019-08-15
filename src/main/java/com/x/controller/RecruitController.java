@@ -42,7 +42,7 @@ public class RecruitController {
 		PageBean pageBean=new PageBean(Integer.parseInt(page),5); //分页：一页5条（此处先写死）
 		List<Recruit> recruitList=recruitService.recruitList(pageBean,s_recruit);
 		int total=recruitService.recruitCount(s_recruit);
-		String pageCode=PageUtil.getPagation(request.getContextPath()+"/recruit/list.do", total, Integer.parseInt(page), pageBean.getPageSize());
+		String pageCode=PageUtil.getPagation(request.getContextPath()+ "/recruit/list.do", total, Integer.parseInt(page), pageBean.getPageSize());
 		mav.addObject("recruitList", recruitList);
 		mav.addObject("pageCode", pageCode);
 		mav.addObject("modeName", "招聘管理");
@@ -55,7 +55,7 @@ public class RecruitController {
 	public ModelAndView preSave(@RequestParam(value="id",required=false) String id){
 		ModelAndView mav=new ModelAndView();
 		mav.addObject("modeName", "招聘管理");
-		mav.addObject("mainPage","/recruit/save.jsp");
+		mav.addObject("mainPage", "/recruit/save.jsp");
 		List<Recruit> recruitList=recruitService.recruitList(null, null);
 		mav.addObject("recruitList", recruitList);
 		mav.setViewName("main");

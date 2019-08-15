@@ -57,11 +57,11 @@ public class UserController {
 		PageBean pageBean=new PageBean(Integer.parseInt(page),5); //分页：一页5条（此处先写死）
 		List<User> userList=userService.userList(pageBean,s_user);
 		int total=userService.userCount(s_user);
-		String pageCode=PageUtil.getPagation(req.getContextPath()+"/user/list.do", total, Integer.parseInt(page), pageBean.getPageSize());
+		String pageCode=PageUtil.getPagation(req.getContextPath()+ "/user/list.do", total, Integer.parseInt(page), pageBean.getPageSize());
 		mav.addObject("userList", userList);
 		mav.addObject("pageCode", pageCode);
 		mav.addObject("modeName", "系统用户管理");
-		mav.addObject("mainPage","/user/list.jsp");
+		mav.addObject("mainPage", "/user/list.jsp");
 		mav.setViewName("main");
 		return mav;
 	}
@@ -69,7 +69,7 @@ public class UserController {
 	public ModelAndView preSave(@RequestParam(value="userId",required=false)String userId){
 		ModelAndView mav=new ModelAndView();
 		mav.addObject("modeName", "系统用户管理");
-		mav.addObject("mainPage","/user/save.jsp");
+		mav.addObject("mainPage", "/user/save.jsp");
 		mav.setViewName("main");
 		if(StringUtil.isEmpty(userId)){
 			mav.addObject("actionName", "系统用户添加");

@@ -10,7 +10,7 @@
 						alert(result.errorInfo)
 					}else{
 						alert("删除成功");
-						window.location.href="${pageContext.request.contextPath}/recruit/list.do";
+						window.location.href="/list.do";
 					}
 				}
 			);
@@ -26,7 +26,7 @@
 						alert(result.errorInfo)
 					}else{
 						alert("体检通过");
-						window.location.href="${pageContext.request.contextPath}/recruit/list.do";
+						window.location.href="/list.do";
 					}
 				}
 			);
@@ -42,7 +42,7 @@
 						alert(result.errorInfo)
 					}else{
 						alert("身份证通过");
-						window.location.href="${pageContext.request.contextPath}/recruit/list.do";
+						window.location.href="/list.do";
 					}
 				}
 			);
@@ -93,7 +93,7 @@
     </form>
   </div>
   <div class="col-md-4" >
-  	<button type="button" class="btn btn-primary" style="float: right;" onclick="javascript:window.location.href='${pageContext.request.contextPath}/recruit/preSave.do'">添加</button>
+  	<button type="button" class="btn btn-primary" style="float: right;" onclick="javascript:window.location.href='/preSave.do'">添加</button>
   </div>
 </div>
 <div>
@@ -120,7 +120,7 @@
 	  		<td>${recruit.healthyState==0? '<font color="red">待验</font>':'<font color="green">合格</font>'}</td>
 	  		<td>${recruit.idcardState==0? '<font color="red">待验</font>':'<font color="green">合格</font>'}</td>
 	  		<td>
-	  			<button type="button" class="btn btn-info btn-xs" onclick="javascript:window.location.href='${pageContext.request.contextPath}/recruit/preSave.do?id=${recruit.id }'">修改</button>
+	  			<button type="button" class="btn btn-info btn-xs" onclick="javascript:window.location.href='/preSave.do?id=${recruit.id }'">修改</button>
 	  			<button type="button" class="btn btn-danger btn-xs" onclick="recruitDelete(${recruit.id })">删除</button>
 	  			<button type="button" class="btn btn-danger btn-xs" onclick="recruitCheckHealth(${recruit.id })">核验体检</button>
 	  			<button type="button" class="btn btn-danger btn-xs" onclick="recruitCheckIdcard(${recruit.id })">核验身份</button>

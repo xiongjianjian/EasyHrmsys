@@ -12,7 +12,7 @@
 					}else{
 						alert("删除失败");
 					}
-					window.location.href="${pageContext.request.contextPath}/employee/list.do";
+					window.location.href="/list.do";
 				}
 			);
 		}
@@ -38,7 +38,7 @@
 	</form>
   </div>
   <div class="col-md-2" >
-  	<button type="button" class="btn btn-primary" style="float: right;" onclick="javascript:window.location.href='${pageContext.request.contextPath}/employee/preSave.do'">添加</button>
+  	<button type="button" class="btn btn-primary" style="float: right;" onclick="javascript:window.location.href='/preSave.do'">添加</button>
   </div>
 </div>
 <div>
@@ -71,8 +71,8 @@
 	  		<td>${employee.empForm }</td>
 	  		<td>${employee.deptName }</td>
 	  		<td>
-	  			<button type="button" class="btn btn-info btn-xs" onclick="javascript:window.location.href='${pageContext.request.contextPath}/employee/view.do?id=${employee.empId }'">查看</button>
-	  			<button type="button" class="btn btn-info btn-xs" onclick="javascript:window.location.href='${pageContext.request.contextPath}/employee/preSave.do?id=${employee.empId }'">修改</button>
+	  			<button type="button" class="btn btn-info btn-xs" onclick="javascript:window.location.href='/view.do?id=${employee.empId }'">查看</button>
+	  			<button type="button" class="btn btn-info btn-xs" onclick="javascript:window.location.href='/preSave.do?id=${employee.empId }'">修改</button>
 	  			<button type="button" class="btn btn-danger btn-xs" onclick="employeeDelete(${employee.empId })">删除</button>
 	  		</td>
 	  	</tr>
