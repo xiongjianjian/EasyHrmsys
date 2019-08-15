@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns="http://www.springframework.org/schema/beans" default-lazy-init="true">
+
+    <!-- 使用注解的包，包括子集 -->
+    <context:component-scan base-package="com.x.controller"/>
+
+    <!-- 视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
+    <property value="/" name="prefix"/>
+    <property value=".jsp" name="suffix"/>
+    </bean>
+
+    <!-- 前台日期作为实体类对象参数类型转换 -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+    <property name="webBindingInitializer">
+    <bean class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+    <property name="conversionService">
+
+    <bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean"/>
+    </property>
+    </bean>
+    </property>
+    </bean>
+
+    <!-- 文件上传 -->
+    <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+    <property value="UTF-8" name="defaultEncoding"/>
+    <property value="10000000" name="maxUploadSize"/>
+    </bean>
+</beans>
